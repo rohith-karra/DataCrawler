@@ -2,13 +2,6 @@
 
 The aim of this project is to create a dashboard so that users can navigata and interact with the analysis we have done so far. Flask is used to create this application. PostgreSQL is used as a database to connect and fetch the retrieved data.
 
-## Team - Squad
-
-* Rohith Reddy Karra, rkarra1@binghamton.edu
-* Chanukya Vantipenta, cvantip1@binghamton.edu
-* Vikash Eppela, veppela1@binghamton.edu
-* Krishna Preetham Bhavirisetty, kbhavir1@binghamton.edu
-
 ## Tech-stack
 
 * `Flask` - Flask is a web famework in python (https://github.com/pallets/flask)
