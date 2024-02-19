@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+    transition: all 0.6s;
+}
+
+html {
+    height: 100%;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    color: #888;
+    margin: 0;
+}
+
+
+@keyframes type{
+	  from{box-shadow: inset -3px 0px 0px #888;}
+	  to{box-shadow: inset -3px 0px 0px transparent;}
+}
+</style>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background: linear-gradient(125deg, #ECFCFF 0%, #ECFCFF 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;"></body>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header text-center bg-info text-white">
+                
+                    <h5>Word cloud</h5>
+                </div>
+                <div class="card-body">
+
+<table align="center">
+    <tr>
+        <td colspan="3"> <select name="Platform" id="platforms">
+                    <option value="youtube">Youtube</option>
+                    <option value="reddit">Reddit</option>
+          </select></td>
+    </tr>
+    <tr>
+        <td><input type="submit" id="button" onclick="timeUpdate()" value="Submit"></td>
+    </tr>
+</table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+</div>
+<script type="text/javascript">
+    function timeUpdate(){
+    var platform= document.getElementById('platforms').value;
+    location.href = "/"+platform;
+    }
+
+    
+
+</script>
+</body>
+</html>

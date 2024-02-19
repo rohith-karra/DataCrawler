@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title > Sentiment Analysis</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='tech.css')}}">
+
+
+
+
+
+  </head>
+  <body>
+<section id= "banner">
+
+<div class="banner-text">
+  <h1>Analysis on Social media Platforms</h1>
+
+
+</div>
+</section>
+
+<div id="sidenav">
+    <nav>
+    <ul>
+      <li><a href="/"><b>HOME</b></a></li>
+      <li><a href="/#analysis"><b>Analysis</b></a></li>
+      <li><a href="/timeseries"><b>Timeseries</b></a></li>
+    </ul>
+    </nav>
+
+</div>
+<div id="menuBtn">
+  <img src="{{ url_for('static',filename='images/menu.png')}}" style="width:40px" id="menu">
+</div>
+
+
+
+<section id ="analysis">
+  <div class="title-text">
+
+    <h1>Analysis</h1>
+    <br>
+    <p>Analysis done on twitter, reddit and youtube data</p>
+</div>
+<div class="analysis-box">
+
+  <div class="analysis-img">
+    <a href="/timeseries"><img src="{{ url_for('static',filename='images/timeseries.jpeg')}}" ></a>
+      <h3>Time Series </h3>
+  </div>
+<br>
+
+<div class="analysis-img">
+  <a href="/sentiment"><img src="{{ url_for('static',filename='images/sentiment.jpeg')}}" ></a>
+    <h3>Sentiment</h3>
+</div>
+
+  <div class="analysis-img">
+      <a href="/wordcloud"><img src="{{ url_for('static',filename='images/wordcloud.png')}}" ></a>
+      <h3>Wordcloud</h3>
+  </div>
+
+
+  <div class="analysis-img">
+      <a href="/query"><img src="{{ url_for('static',filename='images/query.avif')}}" ></a>
+      <h3>something more</h3>
+  </div>
+
+
+
+
+
+</div>
+
+
+</section>
+
+<!--about-->
+
+<section id ="about">
+  <div class="title-text">
+
+    <h1>About Us</h1>
+</div>
+<div class="about-box">
+  <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h3>Chanukya vantipenta</h3>
+              <p>B00978630</p>
+              <p>cvantip1@binghamton.edu</p>
+            </div>
+           </div>
+        </div>
+
+    <div class="column">
+      <div class="card">
+        <div class="container">
+          <h3>Krishna Preetham bhavirishetty</h3>
+          <p>B00978425</p>
+          <p>kbhavir1@binghamton.edu</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <div class="container">
+          <h3>Rohith Reddy karra</h3>
+          <p>B00979520       </p>
+          <p>rkarra1@binghamton.edu</p>
+        </div>
+      </div>
+    </div>
+  <div class="column">
+      <div class="card">
+        <div class="container">
+          <h3>Vikash Eppela</h3>
+          <p>B00957221 </p>
+          <p>veppela1@binghamton.edu</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  </div>
+  </section>
+<!--thank you-->
+
+<section id ="thank">
+  <div class="text">
+
+    <h1>thank you  <img src="{{ url_for('static',filename='images/smile.png')}}" style="width:50px"></h1>
+
+</div>
+
+</section>
+
+
+<script >
+
+var menuBtn=document.getElementById("menuBtn")
+var menuBtn=document.getElementById("sidenav")
+var menuBtn=document.getElementById("menu")
+
+
+sidenav.style.right="-250px";
+
+
+    
+menuBtn.onclick=function(){
+          if(sidenav.style.right == "-250px"){
+            sidenav.style.right="0";
+            menu.src="{{ url_for('static',filename='images/cancel.png')}}";
+          }
+          else {
+          sidenav.style.right= "-250px";
+          menu.src="{{ url_for('static',filename='images/menu.png')}}";
+          }
+        }
+</script>
+
+
+  </body>
+</html>

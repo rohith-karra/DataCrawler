@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title > {{ title }}</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <link rel="icon" href="{{ url_for('static',filename='images/logo1.png')}}" type="image/icon type">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='tech.css')}}">
+
+
+
+
+  </head>
+
+<body>
+    <section id= "banner1">
+        <div class="banner-text2">
+          <h2>Time Series Plot</h2>
+        </div>
+        </section>
+        
+        <div id="sidenav">
+            <nav>
+            <ul>
+              <li><a href="/"><b>HOME</b></a></li>
+              <li><a href="/#analysis"><b>Analysis</b></a></li>
+              <li><a href="/timeseries"><b>Timeseries</b></a></li>
+            </ul>
+            </nav>
+        
+        </div>
+        <div id="menuBtn">
+          <img src="{{ url_for('static',filename='images/menu.png')}}" style="width:40px" id="menu">
+        </div>
+    <center>
+        <canvas id="chart" width="2000" height="600"></canvas>
+        
+        <script>
+            var ctx = document.getElementById("chart");
+
+            var mylineChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: {{labels|tojson}},
+                    datasets: [{
+                        data: {{values|tojson}},
+                        borderWidth: 1,
+                        borderColor: '#36A2EB',
+                        backgroundColor: '#9BD0F5'
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                autoSkip: true,
+                                maxRotation: 45,
+                                minRotation: 45
+                            },
+                            scaleLabel: 
+                            {
+                                display: true,
+                                labelString: 'DateTime'
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: 
+                            {
+                                display: true,
+                                labelString: 'Number of Tweets'
+                            }
+                        }]
+                    }
+                }
+            });
+
+        </script>
+    </center>
+    <script >
+
+        var menuBtn=document.getElementById("menuBtn")
+        var menuBtn=document.getElementById("sidenav")
+        var menuBtn=document.getElementById("menu")
+        
+        
+        sidenav.style.right="-250px";
+        
+        
+        menuBtn.onclick=function(){
+          if(sidenav.style.right == "-250px"){
+            sidenav.style.right="0";
+            menu.src="{{ url_for('static',filename='images/cancel.png')}}";
+          }
+          else {
+          sidenav.style.right= "-250px";
+          menu.src="{{ url_for('static',filename='images/menu.png')}}";
+          }
+        }
+        </script>
+</body>
+</html>
